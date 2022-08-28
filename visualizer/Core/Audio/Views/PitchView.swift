@@ -37,7 +37,7 @@ struct PitchView: View {
                                 peakBarIndex: vm.audio.peakBarIndex,
                                 isPitchAccurate: vm.audio.isPitchAccurate,
                                 peakFrequency: vm.audio.pitchFrequency
-                                
+
                     )
                         .frame(minWidth: 0, maxWidth: .infinity)
                 }

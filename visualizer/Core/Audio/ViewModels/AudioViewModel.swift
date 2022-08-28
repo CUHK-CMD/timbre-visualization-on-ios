@@ -198,7 +198,9 @@ class AudioViewModel: ObservableObject {
             }
             
             // update amplitudesToDisplay
-            self.audio.amplitudesToDisplay = self.audio.amplitudes
+            self.audio.amplitudesToDisplay = self.audio.amplitudes.map { $0.isNaN ? 0.5 : $0 }
+            
+        print("DEBUG: \(audio.amplitudesToDisplay)")
             
             // Get the amplitude of fundamental frequency (1st harmonic)
             let fundFreqAmp = self.audio.harmonicAmplitudes[0]

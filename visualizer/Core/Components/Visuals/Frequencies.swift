@@ -20,12 +20,12 @@ struct Frequencies: View {
     var body: some View {
         ScrollView(.horizontal) {
             ScrollViewReader { proxy in
-                HStack(spacing: 5) {
+                LazyHStack(spacing: 5) {
                     ForEach(0...amplitudes.count-1, id: \.self) { i in
                         VStack {
                             if (i == peakBarIndex) {
                                 VBar(val: amplitudes[i]*7.0, width: 4, color: .accent.highlight, showValue: true, peakFrequency: peakFrequency)
-                                
+
                             } else {
                                 if (isPitchAccurate) {
                                     VBar(val: amplitudes[i]*7.0, width: 4, color: .accent.successVariant, showValue: false)
